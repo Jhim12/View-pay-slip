@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="View_pay_slip.Pages.EmpPayslipPage"
+             BackgroundColor="WhiteSmoke">
+
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Default" Orientation="Vertical">
+            <Grid RowDefinitions="auto, auto, auto, auto, auto">
+
+                <Frame Margin="10,10,10,0" CornerRadius="10" Grid.Row="0" HasShadow="True">
+                    <Label 
+                    Text="Santa Rita College of Pampanga"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Title"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    </Label>
+                </Frame>
+
+                <Frame Margin="10,10,10,0" CornerRadius="10" Grid.Row="1" HasShadow="True">
+                    <Label 
+                    Text="Pay Slip"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Title"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    </Label>
+                </Frame>
+
+                <Frame Margin="10,10,10,0" HeightRequest="150" CornerRadius="10" Grid.Row="2" HasShadow="True">
+                    <ListView x:Name="EmpInfo" SelectionMode="None" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Text="{Binding id}" TextColor="Goldenrod" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" />
+
+                                        <Label  Text="{Binding fullname}" TextColor="MediumSeaGreen" FontSize="Small" VerticalOptions="FillAndExpand" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3"/>
+
+                                        <Label  Text="Designation: " TextColor="SteelBlue" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Grid.Column="0" Grid.Row="2" />
+                                        <Label  Text="{Binding designation}" TextColor="SteelBlue"  Grid.Column="1" Grid.Row="2" />
+
+                                        <Label  Text="Status: " TextColor="SteelBlue" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Grid.Column="0" Grid.Row="3" />
+                                        <Label  Text="{Binding status}" TextColor="SteelBlue"  Grid.Column="1" Grid.Row="3" />
+
+                                        <Label  Text="Department: " TextColor="SteelBlue" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Grid.Column="0" Grid.Row="4" />
+                                        <Label  Text="{Binding department}" TextColor="SteelBlue"  Grid.Column="1" Grid.Row="4" />
+
+                                        <Label  Text="Duration Covered: " TextColor="SteelBlue" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Grid.Column="0" Grid.Row="5" />
+                                        <Label  Text="{Binding bimonthlydate}" TextColor="SteelBlue"  Grid.Column="1" Grid.Row="5" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+                <Frame Margin="10,10,10,0" HeightRequest="400" CornerRadius="10" Grid.Row="3" HasShadow="True">
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Grid.Column="0" Grid.Row="1"  Text="(+) Netpay" FontAttributes="Bold" FontSize="Small" TextColor="LightGreen" ></Label>
+                            <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,5,0,0" />
+                        </StackLayout>
+
+                        <ListView x:Name="MyNetpay" HasUnevenRows="True" Footer="">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+
+                                        <Grid>
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="Payslip No.:" Grid.Column="0" Grid.Row="0" FontSize="Body" VerticalOptions="Center" TextColor="LightGray"></Label>
+                                            <Label x:Name="lblPayslipNo" Text="{Binding payslipno}" Grid.Column="1" Grid.Row="0" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center" FontAttributes="Bold"></Label>
+
+                                            <Label Text="Basic Pay:" Grid.Column="0" Grid.Row="1" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblBasicpay" Text="{Binding basicpay}" Grid.Column="1" Grid.Row="1" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Allowance: " Grid.Column="0" Grid.Row="2" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblAllowance" Text="{Binding allowance}" Grid.Column="1" Grid.Row="2" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Overload:" Grid.Column="0" Grid.Row="3" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblOverload" Text="{Binding overload}" Grid.Column="1" Grid.Row="3" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Longevity:" Grid.Column="0" Grid.Row="4" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblLong" Text="{Binding longevity}" Grid.Column="1" Grid.Row="4" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="" Grid.Column="0" Grid.Row="5" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label Text="" Grid.Column="1" Grid.Row="5" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Gross Pay:" Grid.Column="0" Grid.Row="6" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblGrosspay" Text="{Binding grosspay}" Grid.Column="1" Grid.Row="6" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Total Deduction:" Grid.Column="0" Grid.Row="7" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblTtldeduc" Text="{Binding totaldeduc}" Grid.Column="1" Grid.Row="7" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Net Compensation:" Grid.Column="0" Grid.Row="8" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblNet" Text="{Binding net}" Grid.Column="1" Grid.Row="8" FontSize="Default" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center" FontAttributes="Bold"></Label>
+
+                                        </Grid>
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Margin="10,10,10,0" HeightRequest="225" CornerRadius="10" Grid.Row="4" HasShadow="True">
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Grid.Column="0" Grid.Row="1"  Text="(-) Tax" FontAttributes="Bold" FontSize="Small" TextColor="Red" ></Label>
+                            <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,5,0,0" />
+                        </StackLayout>
+
+                        <ListView x:Name="MyTax" HasUnevenRows="True" Footer="">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="Withholding Tax:" Grid.Column="0" Grid.Row="0" FontSize="Body" VerticalOptions="Center" TextColor="LightGray"></Label>
+                                            <Label x:Name="lblWTax" Text="{Binding wtax}" Grid.Column="1" Grid.Row="0" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="SSS Premium:" Grid.Column="0" Grid.Row="1" FontSize="Body" VerticalOptions="Center" TextColor="LightGray"></Label>
+                                            <Label x:Name="lblSSS" Text="{Binding sss}" Grid.Column="1" Grid.Row="1" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Med. Premium:" Grid.Column="0" Grid.Row="2" FontSize="Body" VerticalOptions="Center" TextColor="LightGray"></Label>
+                                            <Label x:Name="lblMed" Text="{Binding med}" Grid.Column="1" Grid.Row="2" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="PERAA Premium:" Grid.Column="0" Grid.Row="3" FontSize="Body" VerticalOptions="Center" TextColor="LightGray"></Label>
+                                            <Label x:Name="lblPeraa" Text="{Binding peraa}" Grid.Column="1" Grid.Row="3" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="PAGIBIG Premium:" Grid.Column="0" Grid.Row="4" FontSize="Body" VerticalOptions="Center" TextColor="LightGray"></Label>
+                                            <Label x:Name="lblPagibig" Text="{Binding pagibig}" Grid.Column="1" Grid.Row="4" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                        </Grid>
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame Margin="10,10,10,0" HeightRequest="425" CornerRadius="10" Grid.Row="5" HasShadow="True">
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Grid.Column="0" Grid.Row="1"  Text="(-) Deduction" FontAttributes="Bold" FontSize="Small" TextColor="Red" ></Label>
+                            <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,5,0,0" />
+                        </StackLayout>
+
+                        <ListView x:Name="MyDeduc" HasUnevenRows="True" Footer="">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="SSS Loan:" Grid.Column="0" Grid.Row="0" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblSSSLoan" Text="{Binding sssloan}" Grid.Column="1" Grid.Row="0" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="PERAA Loan:" Grid.Column="0" Grid.Row="1" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblPeraaloan" Text="{Binding peraaloan}" Grid.Column="1" Grid.Row="1" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="PAGIBIG Salary Loan:" Grid.Column="0" Grid.Row="2" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblPagibigloan" Text="{Binding pagibigloan}" Grid.Column="1" Grid.Row="2" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="PAGIBIG Calamity Loan:" Grid.Column="0" Grid.Row="3" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblPagibigloanC" Text="{Binding pagibigloanc}" Grid.Column="1" Grid.Row="3" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Cash Advance:" Grid.Column="0" Grid.Row="4" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblCA" Text="{Binding ca}" Grid.Column="1" Grid.Row="4" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Others:" Grid.Column="0" Grid.Row="5" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblOthers" Text="{Binding others}" Grid.Column="1" Grid.Row="5" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Tardiness:" Grid.Column="0" Grid.Row="6" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lbltTardines" Text="{Binding tardiness}" Grid.Column="1" Grid.Row="6" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Absences:" Grid.Column="0" Grid.Row="7" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblAbsent" Text="{Binding absent}" Grid.Column="1" Grid.Row="7" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label Text="Others Deduction" Grid.Column="0" Grid.Row="8" FontSize="Body" TextColor="Black" VerticalOptions="Center" HorizontalOptions="End"></Label>
+
+                                            <Label x:Name="lblOtherD1" Text="{Binding otherdeduction1}" Grid.Column="0" Grid.Row="9" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblDeduction1" Text="{Binding deduction1}" Grid.Column="1" Grid.Row="9" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                            <Label x:Name="lblOtherD2" Text="{Binding otherdeduction2}" Grid.Column="0" Grid.Row="10" FontSize="Body" TextColor="LightGray" VerticalOptions="Center"></Label>
+                                            <Label x:Name="lblDeduction2" Text="{Binding deduction2}" Grid.Column="1" Grid.Row="10" FontSize="Small" TextColor="#3d4a6b" HorizontalTextAlignment="Center" VerticalOptions="Center"></Label>
+
+                                        </Grid>
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+                </Frame>
+
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

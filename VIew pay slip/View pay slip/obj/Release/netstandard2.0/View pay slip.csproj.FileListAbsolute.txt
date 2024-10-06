@@ -1,0 +1,18 @@
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\bin\Release\netstandard2.0\View pay slip.deps.json
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\bin\Release\netstandard2.0\View pay slip.dll
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\bin\Release\netstandard2.0\ref\View pay slip.dll
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\bin\Release\netstandard2.0\View pay slip.pdb
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\View pay slip.csproj.AssemblyReference.cache
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\View pay slip.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\Pages\ChangeCredentialsPage.xaml.g.cs
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\Pages\EmpPayslipPage.xaml.g.cs
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\Pages\LoginPage.xaml.g.cs
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\Pages\SetDatePage.xaml.g.cs
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\View pay slip.AssemblyInfoInputs.cache
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\View pay slip.AssemblyInfo.cs
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\View pay slip.csproj.CoreCompileInputs.cache
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\View pay slip.dll
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\refint\View pay slip.dll
+C:\Users\New\source\repos\VIew pay slip\View pay slip\View pay slip\obj\Release\netstandard2.0\View pay slip.pdb
